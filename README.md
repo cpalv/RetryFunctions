@@ -7,5 +7,5 @@ it succeeds or the maximum retry attempts have been exhausted.
 retry_function(attempts, time_unit, function)
 ```
 
-The retry functions will sleep for 2^attempt^*time unit after each
+The retry functions will sleep for 2<sup>attempt</sup>*time unit after each
 failed attempt. The final error if any is returned. 
