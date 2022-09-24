@@ -2,7 +2,7 @@
 
 // time units
 #define MICROSECOND 1
-#define MILISECOND  1000
+#define MILLISECOND  1000
 #define SECOND      1000000
 
 // errors
