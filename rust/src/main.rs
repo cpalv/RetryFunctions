@@ -43,10 +43,7 @@ where
         power = power << 1 | power >> 31;
     }
 
-    match res {
-        Ok(v) => Ok(v),
-        Err(e) => Err(RetryErr::RetryFailed(e)),
-    }
+    res.map_err(|e| RetryErr::RetryFailed(e))
 }
 
 fn retry_fn_mut<F, T, E>(attempts: u8, time_unit: Duration, mut f: F) -> Result<T, RetryErr<E>>
@@ -77,10 +74,7 @@ where
         power = power << 1 | power >> 31;
     }
 
-    match res {
-        Ok(v) => Ok(v),
-        Err(e) => Err(RetryErr::RetryFailed(e)),
-    }
+    res.map_err(|e| RetryErr::RetryFailed(e))
 }
 
 fn rand_even_num() -> Result<u16, u16> {
@@ -135,9 +129,12 @@ fn main() {
 
     let x = 3;
     let y = 5;
+    println!("*x = {:p}, *y = {:p}", &x, &y);
+
     let capxy = || -> Result<u32, RetryErr<()>> {
         thread::sleep(Duration::from_secs(2));
-        let z = x + y;
+        println!("*x = {:p}, *y = {:p}", &x, &y);
+        let z = &x + &y;
         Ok(z)
     };
 
