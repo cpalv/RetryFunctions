@@ -256,7 +256,7 @@ useful if they don't have stuff to work with.  You might be able to use [macros]
 that part of the forest yet.  After some research, you discover function traits: [Fn](https://doc.rust-lang.org/std/ops/trait.Fn.html), [FnMut](https://doc.rust-lang.org/std/ops/trait.FnMut.html), [FnOnce](https://doc.rust-lang.org/std/ops/trait.FnOnce.html)
 and finally get something that works as you'd expect.
 
-![rust meme](https://github.com/cpalv/RetryFunctions/tree/main/imgs/rustc.jpg)
+![rust meme](https://github.com/cpalv/RetryFunctions/blob/main/imgs/rustc.jpg)
 
 ## Suggested changes
 
